@@ -10,18 +10,95 @@
 
 / {
     macros {
-        cmd_shft_t: cmd_shft_t {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_COMMAND &kp LEFT_SHIFT &kp T>;
-            label = "CMD_SHFT_T";
-        };
-
-        cmd_1: cmd_1 {
+        cmd_shift_t: cmd_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kt LEFT_COMMAND &kt LEFT_SHIFT &kt T &kt T &kt LEFT_SHIFT &kt LEFT_COMMAND>;
             label = "CMD_1";
+        };
+
+        cmd_shift_r: cmd_shift_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt LEFT_SHIFT &kt R &kt R &kt LEFT_SHIFT &kt LEFT_COMMAND>;
+            label = "CMD_SHIFT_R";
+        };
+
+        cmd_a: cmd_a {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt A &kt A &kt LEFT_COMMAND>;
+            label = "CMD_A";
+        };
+
+        cmd_s: cmd_s {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt S &kt S &kt LEFT_COMMAND>;
+            label = "CMD_S";
+        };
+
+        cmd_f: cmd_f {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt F &kt F &kt LEFT_COMMAND>;
+            label = "CMD_F";
+        };
+
+        cmd_d: cmd_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt D &kt D &kt LEFT_COMMAND>;
+            label = "CMD_D";
+        };
+
+        cmd_z: cmd_z {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt Z &kt Z &kt LEFT_COMMAND>;
+            label = "CMD_Z";
+        };
+
+        cmd_x: cmd_x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt X &kt X &kt LEFT_COMMAND>;
+            label = "CMD_X";
+        };
+
+        cmd_c: cmd_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt C &kt C &kt LEFT_COMMAND>;
+            label = "CMD_C";
+        };
+
+        cmd_v: cmd_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt V &kt V &kt LEFT_COMMAND>;
+            label = "CMD_V";
+        };
+
+        cmd_w: cmd_w {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt W &kt W &kt LEFT_COMMAND>;
+            label = "CMD_W";
+        };
+
+        cmd_r: cmd_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt R &kt R &kt LEFT_COMMAND>;
+            label = "CMD_R";
+        };
+
+        cmd_t: cmd_t {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt T &kt T &kt LEFT_COMMAND>;
+            label = "CMD_T";
         };
     };
 
@@ -38,7 +115,7 @@
             bindings = <
 &kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T    &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &kp ESCAPE  &kp A  &kp S  &kp D     &kp F  &kp G    &kp H      &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z  &kp X  &kp C     &kp V  &kp B    &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
+&kp LSHFT   &kp Z  &kp X  &kp C     &kp V  &kp B    &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
                           &kp LGUI  &mo 1  &mo 3    &kp SPACE  &mo 2  &kp RALT
             >;
         };
@@ -73,21 +150,21 @@
             >;
         };
 
-        layer_3 {
+        Commands {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&mo 4   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &cmd_w  &trans  &cmd_r  &cmd_t    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &cmd_a  &cmd_s  &cmd_d  &cmd_f  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&mo 4   &cmd_z  &cmd_x  &cmd_c  &cmd_v  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &cmd_1  &cmd_shft_t    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans         &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans         &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &cmd_shift_r  &cmd_shift_t    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans        &trans          &trans  &trans  &trans
             >;
         };
     };
