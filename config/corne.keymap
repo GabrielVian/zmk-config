@@ -100,6 +100,13 @@
             bindings = <&kt LEFT_COMMAND &kt T &kt T &kt LEFT_COMMAND>;
             label = "CMD_T";
         };
+
+        cmd_tab: cmd_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt TAB &kt TAB &kt LEFT_COMMAND>;
+            label = "CMD_TAB";
+        };
     };
 
     keymap {
@@ -152,10 +159,10 @@
 
         Commands {
             bindings = <
-&trans  &trans  &cmd_w  &trans  &cmd_r  &cmd_t    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &cmd_a  &cmd_s  &cmd_d  &cmd_f  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&mo 4   &cmd_z  &cmd_x  &cmd_c  &cmd_v  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&cmd_tab  &trans  &cmd_w  &trans  &cmd_r  &cmd_t    &trans  &trans  &trans  &trans  &trans  &trans
+&trans    &cmd_a  &cmd_s  &cmd_d  &cmd_f  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&mo 4     &cmd_z  &cmd_x  &cmd_c  &cmd_v  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                          &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
