@@ -107,6 +107,13 @@
             bindings = <&kt LEFT_COMMAND &kt TAB &kt TAB &kt LEFT_COMMAND>;
             label = "CMD_TAB";
         };
+
+        cmd_shift_4: cmd_shift_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt LEFT_SHIFT &kt NUMBER_4 &kt NUMBER_4 &kt LEFT_SHIFT &kt LEFT_COMMAND>;
+            label = "CMD_SHIFT_4";
+        };
     };
 
     keymap {
@@ -160,7 +167,7 @@
         Commands {
             bindings = <
 &cmd_tab  &trans  &cmd_w  &trans  &cmd_r  &cmd_t    &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &cmd_a  &cmd_s  &cmd_d  &cmd_f  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&mo 5     &cmd_a  &cmd_s  &cmd_d  &cmd_f  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &mo 4     &cmd_z  &cmd_x  &cmd_c  &cmd_v  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                           &trans  &trans  &trans    &trans  &trans  &trans
             >;
@@ -172,6 +179,15 @@
 &trans  &trans  &trans  &trans  &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans        &trans          &trans  &trans  &trans
+            >;
+        };
+
+        layer_5 {
+            bindings = <
+&trans  &trans  &trans  &trans  &cmd_shift_4  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans        &trans    &trans  &trans  &trans
             >;
         };
     };
