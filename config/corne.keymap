@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -114,6 +113,37 @@
             bindings = <&kt LEFT_COMMAND &kt LEFT_SHIFT &kt NUMBER_4 &kt NUMBER_4 &kt LEFT_SHIFT &kt LEFT_COMMAND>;
             label = "CMD_SHIFT_4";
         };
+
+        cmd_opt_v: cmd_opt_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt LEFT_SHIFT &kt T &kt T &kt LEFT_SHIFT &kt LEFT_COMMAND>;
+            label = "CMD_OPT_V";
+        };
+    };
+
+    behaviors {
+        hold_tap: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <30>;
+            hold-trigger-key-positions = <35>;
+            hold-while-undecided;
+        };
+
+        hold_tap_layer: hold_tap_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_LAYER";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <30>;
+            hold-trigger-key-positions = <35>;
+            hold-while-undecided;
+        };
     };
 
     keymap {
@@ -127,10 +157,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T    &kp Y      &kp U  &kp I            &kp O    &kp P     &kp BSPC
-&kp ESCAPE  &kp A  &kp S  &kp D     &kp F  &kp G    &kp H      &kp J  &kp K            &kp L    &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z  &kp X  &kp C     &kp V  &kp B    &kp N      &kp M  &kp COMMA        &kp DOT  &kp FSLH  &kp ENTER
-                          &kp LGUI  &mo 1  &mo 3    &kp SPACE  &mo 2  &kp RIGHT_SHIFT
+&kp TAB     &kp Q  &kp W  &kp E     &kp R  &kp T                      &kp Y      &kp U  &kp I            &kp O    &kp P     &kp BSPC
+&kp ESCAPE  &kp A  &kp S  &kp D     &kp F  &kp G                      &kp H      &kp J  &kp K            &kp L    &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z  &kp X  &kp C     &kp V  &kp B                      &kp N      &kp M  &kp COMMA        &kp DOT  &kp FSLH  &hold_tap LEFT_SHIFT ENTER
+                          &kp LGUI  &mo 1  &hold_tap_layer 3 SPACE    &kp SPACE  &mo 2  &kp RIGHT_SHIFT
             >;
         };
 
@@ -142,10 +172,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB           &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8           &kp N9          &kp N0          &kp BSPC
-&bt BT_CLR        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP           &kp RIGHT       &kp UP_ARROW    &trans
-&kp LEFT_CONTROL  &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT
-                                              &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RIGHT_SHIFT
+&kp TAB           &kp N1  &kp N2  &kp N3    &kp N4  &kp N5       &kp N6    &kp N7    &kp N8           &kp N9          &kp N0          &kp BSPC
+&trans            &trans  &trans  &trans    &trans  &trans       &kp LEFT  &kp DOWN  &kp UP           &kp RIGHT       &kp UP_ARROW    &trans
+&kp LEFT_CONTROL  &trans  &trans  &trans    &trans  &trans       &trans    &trans    &trans           &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT
+                                  &kp LGUI  &trans  &kp SPACE    &kp RET   &trans    &kp RIGHT_SHIFT
             >;
         };
 
