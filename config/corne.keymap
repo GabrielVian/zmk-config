@@ -120,6 +120,76 @@
             bindings = <&kt LEFT_COMMAND &kt LEFT_SHIFT &kt T &kt T &kt LEFT_SHIFT &kt LEFT_COMMAND>;
             label = "CMD_OPT_V";
         };
+
+        cmd_2: cmd_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt NUMBER_2 &kt NUMBER_2 &kt LEFT_COMMAND>;
+            label = "CMD_2";
+        };
+
+        cmd_3: cmd_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt NUMBER_3 &kt NUMBER_3 &kt LEFT_COMMAND>;
+            label = "CMD_3";
+        };
+
+        cmd_4: cmd_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt NUMBER_4 &kt NUMBER_4 &kt LEFT_COMMAND>;
+            label = "CMD_4";
+        };
+
+        cmd_5: cmd_5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt N5 &kt N5 &kt LEFT_COMMAND>;
+            label = "CMD_5";
+        };
+
+        cmd_6: cmd_6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt NUMBER_6 &kt NUMBER_6 &kt LEFT_COMMAND>;
+            label = "CMD_6";
+        };
+
+        cmd_7: cmd_7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt N7 &kt N7 &kt LEFT_COMMAND>;
+            label = "CMD_7";
+        };
+
+        cmd_8: cmd_8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt N8 &kt N8 &kt LEFT_COMMAND>;
+            label = "CMD_8";
+        };
+
+        cmd_9: cmd_9 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt N9 &kt N9 &kt LEFT_COMMAND>;
+            label = "CMD_9";
+        };
+
+        cmd_0: cmd_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt N0 &kt NUMBER_0 &kt LEFT_COMMAND>;
+            label = "CMD_0";
+        };
+
+        cmd_1_: cmd_1_ {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt LEFT_COMMAND &kt NUMBER_1 &kt NUMBER_0 &kt LEFT_COMMAND>;
+            label = "CMD_1_";
+        };
     };
 
     behaviors {
@@ -143,6 +213,16 @@
             tapping-term-ms = <30>;
             hold-trigger-key-positions = <35>;
             hold-while-undecided;
+        };
+
+        hold_tap_2_w: hold_tap_2_w {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP_2_W";
+            bindings = <&cmd_2>, <&cmd_w>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <2>;
+            tapping-term-ms = <30>;
         };
     };
 
@@ -196,10 +276,10 @@
 
         Commands {
             bindings = <
-&cmd_tab  &trans  &cmd_w  &trans  &cmd_r  &cmd_t    &trans  &trans  &trans  &trans  &trans  &trans
-&mo 5     &cmd_a  &cmd_s  &cmd_d  &cmd_f  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&mo 4     &cmd_z  &cmd_x  &cmd_c  &cmd_v  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                          &trans  &trans  &trans    &trans  &trans  &trans
+&cmd_tab  &cmd_1_  &hold_tap_2_w 0 0  &trans  &cmd_r  &cmd_t    &trans  &trans  &trans  &trans  &trans  &trans
+&mo 5     &cmd_a   &cmd_s             &cmd_d  &cmd_f  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&mo 4     &cmd_z   &cmd_x             &cmd_c  &cmd_v  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                      &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
