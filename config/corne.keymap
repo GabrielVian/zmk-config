@@ -199,7 +199,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <30>;
+            tapping-term-ms = <80>;
             hold-trigger-key-positions = <35>;
             hold-while-undecided;
         };
@@ -210,7 +210,7 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <30>;
+            tapping-term-ms = <80>;
             hold-trigger-key-positions = <35>;
             hold-while-undecided;
         };
@@ -222,7 +222,7 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <2>;
-            tapping-term-ms = <30>;
+            tapping-term-ms = <80>;
         };
 
         hold_tap_4_r: hold_tap_4_r {
@@ -232,7 +232,7 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <4>;
-            tapping-term-ms = <30>;
+            tapping-term-ms = <80>;
         };
 
         hold_tap_5_t: hold_tap_5_t {
@@ -241,7 +241,7 @@
             bindings = <&cmd_5>, <&cmd_t>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <30>;
+            tapping-term-ms = <80>;
             hold-trigger-key-positions = <5>;
         };
     };
