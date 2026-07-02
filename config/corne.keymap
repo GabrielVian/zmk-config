@@ -199,7 +199,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <80>;
+            tapping-term-ms = <150>;
             hold-trigger-key-positions = <35>;
             hold-while-undecided;
         };
@@ -210,7 +210,7 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <80>;
+            tapping-term-ms = <150>;
             hold-trigger-key-positions = <35>;
             hold-while-undecided;
         };
@@ -222,7 +222,7 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <2>;
-            tapping-term-ms = <80>;
+            tapping-term-ms = <150>;
         };
 
         hold_tap_4_r: hold_tap_4_r {
@@ -232,7 +232,7 @@
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <4>;
-            tapping-term-ms = <80>;
+            tapping-term-ms = <150>;
         };
 
         hold_tap_5_t: hold_tap_5_t {
@@ -241,7 +241,7 @@
             bindings = <&cmd_5>, <&cmd_t>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <80>;
+            tapping-term-ms = <150>;
             hold-trigger-key-positions = <5>;
         };
     };
@@ -299,13 +299,13 @@
 &cmd_tab  &cmd_1_  &hold_tap_2_w 0 0  &cmd_3  &hold_tap_4_r 0 0  &cmd_t    &cmd_6  &cmd_7  &cmd_8  &cmd_9  &cmd_0  &cmd_0
 &mo 5     &cmd_a   &cmd_s             &cmd_d  &cmd_f             &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &mo 4     &cmd_z   &cmd_x             &cmd_c  &cmd_v             &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                      &trans  &trans             &trans    &trans  &trans  &trans
+                                      &trans  &kp SPACE          &trans    &trans  &trans  &trans
             >;
         };
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &cmd_shift_r  &cmd_shift_t    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &cmd_shift_4  &cmd_shift_t    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans
                         &trans  &trans        &trans          &trans  &trans  &trans
