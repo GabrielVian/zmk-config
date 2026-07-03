@@ -246,7 +246,7 @@
         hold_tap_2_w: hold_tap_2_w {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_2_W";
-            bindings = <&cmd_2>, <&cmd_w>;
+            bindings = <&cmd_w>, <&cmd_2>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <2>;
@@ -256,7 +256,7 @@
         hold_tap_4_r: hold_tap_4_r {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_4_R";
-            bindings = <&cmd_4>, <&cmd_r>;
+            bindings = <&cmd_r>, <&cmd_4>;
 
             #binding-cells = <2>;
             hold-trigger-key-positions = <4>;
@@ -266,7 +266,7 @@
         hold_tap_5_t: hold_tap_5_t {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_TAP_5_T";
-            bindings = <&cmd_5>, <&cmd_t>;
+            bindings = <&cmd_t>, <&cmd_5>;
 
             #binding-cells = <2>;
             tapping-term-ms = <100>;
@@ -279,7 +279,7 @@
             bindings = <&pi>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <200>;
             hold-trigger-key-positions = <0>;
         };
     };
