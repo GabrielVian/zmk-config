@@ -284,6 +284,18 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        alt_tab {
+            bindings = <&cmd_tab>;
+            key-positions = <0 38>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <10>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
